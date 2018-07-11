@@ -14,6 +14,7 @@ text_file = codecs.open("Packages.txt", encoding='utf-8', mode="w")
 d = pq(url='http://cran.r-project.org/web/views/MachineLearning.html',
        opener=lambda url, **kw: urllib.urlopen(url).read())
 
+
 for e in d("li").items():
     package_name = e("a").html()
     package_link = e("a")[0].attrib['href']
